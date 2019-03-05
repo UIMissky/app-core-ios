@@ -26,7 +26,7 @@
     self.navigationController.navigationBar.backgroundColor = [UIColor whiteColor];
     NSLog(@"-----%@ viewDidLoad-----",NSStringFromClass([self class]));
     
-    //左滑返回
+    //left return
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.navigationController.interactivePopGestureRecognizer.enabled = YES;// 手势有效设置为YES  无效为NO
         self.navigationController.interactivePopGestureRecognizer.delegate = self;
@@ -34,7 +34,8 @@
 }
 
 -(void)addLeftButton{
-    //左侧设置
+    UIBarButtonItem *leftBar = [UIBarButtonItem itemWithImage:@"" highImage:@"" target:self action:@selector(tapOnLeft)];
+    self.navigationItem.leftBarButtonItem = leftBar;
 }
 
 -(void)tapOnLeft{
